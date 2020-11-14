@@ -49,7 +49,7 @@ public class Ventana extends javax.swing.JFrame {
         txtAltura = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        btnCrear1 = new javax.swing.JButton();
+        btnCrear = new javax.swing.JButton();
         btnLeft = new javax.swing.JButton();
         btnDown = new javax.swing.JButton();
         btnRight = new javax.swing.JButton();
@@ -122,10 +122,10 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabel7.setText("Altura:");
 
-        btnCrear1.setText("CREAR");
-        btnCrear1.addActionListener(new java.awt.event.ActionListener() {
+        btnCrear.setText("CREAR");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrear1ActionPerformed(evt);
+                btnCrearActionPerformed(evt);
             }
         });
 
@@ -160,10 +160,10 @@ public class Ventana extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btnDown, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(71, 71, 71)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnDown, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnUp, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,7 +201,7 @@ public class Ventana extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCrear1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnDibujar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 331, Short.MAX_VALUE)))
@@ -239,7 +239,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDibujar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCrear1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(btnUp)
                 .addGap(9, 9, 9)
@@ -254,13 +254,70 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_btnUpActionPerformed
+    
+    
+    private void cmbFiguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbFiguraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbFiguraActionPerformed
+
+    private void cmbColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbColorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbColorActionPerformed
+
+    private void txtYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtYActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtYActionPerformed
+
+    private void txtRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRadioActionPerformed
+
+    private void btnDibujarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDibujarActionPerformed
+        repaint();   
+        
+    }//GEN-LAST:event_btnDibujarActionPerformed
+
+    private void cmbFiguraItemStateChanged(java.awt.event.ItemEvent evt) {
+      String op=evt.getItem().toString();
+        if(op.equals("Circulo")){txtRadio.setVisible(true); txtBase.setVisible(false); txtAltura.setVisible(false);}
+        else if(op.equals("Rectangulo")){txtRadio.setVisible(false); txtBase.setVisible(true); txtAltura.setVisible(true);}
+    }//GEN-LAST:event_cmbFiguraItemStateChanged
+    public void paint(Graphics g){
+        super.paint(g);
+         int f=cmbFigura.getSelectedIndex(), color=cmbColor.getSelectedIndex();  
+        
+        switch(f){
+            case 1: c.dibujar(g);           
+            break;
+        }   
+    }
+    
+    private void txtAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAlturaActionPerformed
+
+    private void txtBaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBaseActionPerformed
+
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         int f = cmbFigura.getSelectedIndex();
+        int color = cmbColor.getSelectedIndex();
         if (cmbFigura.getSelectedIndex()<1)
         {
           showMessageDialog (this,"Selecciona la figura");
           return;
         }
         
+        if (cmbColor.getSelectedIndex() < 1)
+        {
+            showMessageDialog (this, "Selecciona un color");
+            return;
+        }
         switch (f)
         {
             case 1: c=new Circulo(Float.parseFloat(txtRadio.getText()),  //radio
@@ -283,54 +340,7 @@ public class Ventana extends javax.swing.JFrame {
                                       Integer.parseInt(txtY.getText()));             //Coord Y
                                       break;
         }
-        
-        
-    }//GEN-LAST:event_btnUpActionPerformed
-
-    @Override
-         public void paint(Graphics g){
-        super.paint(g);
-         int f=cmbFigura.getSelectedIndex(), color=cmbColor.getSelectedIndex();  
-        
-        switch(f){
-            
-            case 1: c.dibujar(g);          
-            break;
-            case 2: r.dibujar(g);
-            break;
-        }   
-    }
-    private void cmbFiguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbFiguraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbFiguraActionPerformed
-
-    private void cmbColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbColorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbColorActionPerformed
-
-    private void txtYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtYActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtYActionPerformed
-
-    private void txtRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRadioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtRadioActionPerformed
-
-    private void btnDibujarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDibujarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDibujarActionPerformed
-
-    private void txtAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAlturaActionPerformed
-
-    private void txtBaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBaseActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBaseActionPerformed
-
-    private void btnCrear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrear1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCrear1ActionPerformed
+    }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeftActionPerformed
         // TODO add your handling code here:
@@ -349,13 +359,9 @@ public class Ventana extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
+    public static void main(String args[]) 
+    {
+       try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -371,7 +377,6 @@ public class Ventana extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -390,7 +395,7 @@ public class Ventana extends javax.swing.JFrame {
         
         
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCrear1;
+    private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnDibujar;
     private javax.swing.JButton btnDown;
     private javax.swing.JButton btnLeft;
